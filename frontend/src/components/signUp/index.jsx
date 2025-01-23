@@ -2,6 +2,8 @@
 import { useState } from "react";
 import { useModal } from "../context";
 import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { signupSchema } from "../validation/index";
 import { useAddUser } from "../../_Utils/addUser";
 import { handleSignup } from "../../_Utils/handleSignUp";
 import {
@@ -25,7 +27,9 @@ const Signup = () => {
     handleSubmit,
     reset,
     formState: { errors },
-  } = useForm();
+  } = useForm({
+    resolver: yupResolver(signupSchema),
+  });
 
   const handleCloseModal = () => {
     setSuccessMessage("");
@@ -56,7 +60,7 @@ const Signup = () => {
             placeholder="User name"
             type="text"
             id="userName"
-            {...register("userName", { required: "Username is required" })}
+            {...register("userName")}
           />
           {errors.userName && <ErrorText>{errors.userName.message}</ErrorText>}
 
@@ -64,7 +68,7 @@ const Signup = () => {
             placeholder="email"
             type="email"
             id="email"
-            {...register("email", { required: "Email is required" })}
+            {...register("email")}
           />
           {errors.email && <ErrorText>{errors.email.message}</ErrorText>}
 
@@ -72,7 +76,7 @@ const Signup = () => {
             placeholder="password"
             type="password"
             id="password"
-            {...register("password", { required: "Password is required" })}
+            {...register("password")}
           />
           {errors.password && <ErrorText>{errors.password.message}</ErrorText>}
 
