@@ -8,15 +8,7 @@ dotenv.config();
 
 const secret = process.env.SESSION_SECRET;
 
-export async function getOneUser({ id }) {
-  try {
-    const user = await User.findById(id);
-    return user || null;
-  } catch (error) {
-    console.error("Error fetching user:", error);
-    throw new Error("Failed to fetch user");
-  }
-}
+
 
 export async function addUser({ add }) {
   const errors = [];
