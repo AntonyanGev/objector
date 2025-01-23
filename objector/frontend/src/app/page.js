@@ -1,7 +1,7 @@
-import Main from "@/components/main/Main";
-import Navigation from "../components/navigation/Navigation";
-import Signup from "@/components/signUp/SignUp";
-import Login from "@/components/logIn/Login";
+import Main from "@/components/main";
+import Navigation from "../components/navigation";
+import Signup from "@/components/signUp";
+import Login from "@/components/logIn";
 
 export default function Home() {
   return (

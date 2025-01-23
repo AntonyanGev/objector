@@ -3,7 +3,7 @@ import "./globals.css";
 import StyledComponentsRegistry from "./lib/registry";
 import { ApolloProvider } from "@apollo/client";
 import client from "./lib/apolloClient";
-import { ModalProvider } from "../components/context/context";
+import { ModalProvider } from "../components/context";
 
 export default function RootLayout({ children }) {
   return (

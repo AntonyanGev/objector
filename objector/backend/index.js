@@ -13,14 +13,12 @@ app.use(
     methods: "POST",
   })
 );
-console.log(1);
-console.log(2);
 const root = {
-  login: async ({ email, password }) => {
-    return login({ email, password });
-  },
   addUser: async ({ add }) => {
     return addUser({ add });
+  },
+  login: async ({ email, password }) => {
+    return login({ email, password });
   },
 };
 
