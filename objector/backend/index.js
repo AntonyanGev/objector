@@ -14,6 +14,7 @@ app.use(
   })
 );
 console.log(1);
+console.log(2);
 const root = {
   login: async ({ email, password }) => {
     return login({ email, password });
