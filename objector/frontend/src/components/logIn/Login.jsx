@@ -42,7 +42,7 @@ export default function Login() {
           />
           <SubmitButton type="submit">Login</SubmitButton>
         </Form>
-        {loginError && <ErrorText>{loginError}</ErrorText>}
+        {loginError && <ErrorText>User is not exist</ErrorText>}
         {loginSuccess && (
           <SuccessText>Congrats you are successfully logged in</SuccessText>
         )}
