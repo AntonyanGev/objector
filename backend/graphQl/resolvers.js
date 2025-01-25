@@ -69,12 +69,4 @@ export async function login({ email, password }) {
   }
 }
 
-export async function deleteUser({ id }) {
-  try {
-    const deletedUser = await User.findByIdAndDelete(id);
-    return !!deletedUser;
-  } catch (error) {
-    console.error("Error deleting user:", error);
-    throw new Error("Failed to delete user");
-  }
-}
+
